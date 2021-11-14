@@ -1,5 +1,5 @@
 /**
-FastMedian v1.0.0 (c) by Mark Spindler
+FastMedian v1.1.0 (c) by Mark Spindler
 
 FastMedian is licensed under a Creative Commons Attribution 3.0 Unported License.
 
@@ -9,6 +9,8 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by/3.0
 
 static const char* const CLASS = "FastMedian";
 static const char* const HELP =	"Performes the same filter as Nuke's own Median node, but in a shorter render time.\n\n"
+
+								"Version: 1.1.0\n"
 								"Author: Mark Spindler\n"
 								"Contact: info@mark-spindler.com";
 
@@ -64,7 +66,7 @@ void FastMedian::knobs(Knob_Callback f)
 
 void FastMedian::_validate(bool for_real)
 {
-	size_int = std::max(ceil(_size), 0.0f);
+	size_int = std::max((float)ceil((float)outputContext().to_proxy_x(_size)), 0.0f);
 	amount = pow((1 + size_int*2), 2.0f);
 
 	copy_info();
@@ -86,7 +88,6 @@ void FastMedian::engine(int y, int x, int r, ChannelMask channels, Row& row)
 		return;
 	}
 
- 
 	foreach (z, channels) 
 	{
 		float* outptr = row.writable(z) + x;
