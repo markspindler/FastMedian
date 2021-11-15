@@ -3,4 +3,4 @@ FastMedian is a plugin for the compositing software [Nuke](https://www.foundry.c
 
 Furthermore, it seems to run more stable than Nuke's Median, which might freeze Nuke if the radius is set too high. This has never happend to me with FastMedian so far.
 
-You can download compiled binaries of FastMedian for different versions of Nuke from [my website](http://www.mark-spindler.com/tools_fast_median.html "FastMedian on mark-spindler.com").
+You can download compiled binaries of FastMedian for different versions of Nuke from [my website](http://www.mark-spindler.com/tools_fast_median.html "FastMedian on mark-spindler.com") or [Nukepedia](http://www.nukepedia.com/plugins/filter/fast-median "FastMedian on nukepedia.com").
